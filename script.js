@@ -3,8 +3,9 @@ const userScoreEle = document.getElementById('userScore');
 const computerScoreEle = document.getElementById('computerScore');
 let userScore = 0;
 let computerScore = 0;
-const resultEle =document.getElementById('result');
-
+const resultEle = document.getElementById('result');
+let userRes = document.getElementById('userChoice');
+let computerRes = document.getElementById('computerChoice');
 optionsEle.forEach(element => {
     element.addEventListener('click', operation)
 
@@ -17,9 +18,13 @@ function operation(event) {
     controls.style.pointerEvents = 'none';
     let userChoice = event.target.id;
     // console.log(event.target.id);
+    userRes.textContent = userChoice.charAt(0).toUpperCase() + userChoice.slice(1);
+    // console.log(userChoice);
     let randomIndex = Math.floor(Math.random() * array.length);
     let result = "";
-    resultEle.textContent=result;
+    resultEle.textContent="";
+    computerRes.textContent="";
+    resultEle.textContent = result;
     setTimeout(() => {
         turn.textContent = "Your's Turn";
         controls.style.pointerEvents = 'auto';
@@ -38,16 +43,17 @@ function operation(event) {
             result = "Computer Won"
         }
         // console.log(result);
-        resultEle.textContent=result;
-        if(result==="You Won"){
+        computerRes.textContent = computerChoice.charAt(0).toUpperCase() + computerChoice.slice(1);
+        resultEle.textContent = result;
+        if (result === "You Won") {
             userScore++;
-            userScoreEle.textContent=userScore.toString();
-        }else if (result === 'Computer Won'){
+            userScoreEle.textContent = userScore.toString();
+        } else if (result === 'Computer Won') {
             computerScore++;
-            computerScoreEle.textContent=computerScore.toString();
+            computerScoreEle.textContent = computerScore.toString();
         }
 
-        
+
     }, 1000)
 
 
