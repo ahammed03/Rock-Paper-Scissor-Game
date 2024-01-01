@@ -44,6 +44,7 @@ h2 {
     width: 400px;
     /* gap: 20px; */
     justify-content: space-around;
+    /* box-sizing: border-box; */
 }
 
 .controls p {
@@ -58,7 +59,7 @@ h2 {
 }
 
 .controls p:hover {
-    transform: scale(1.15);
+    transform: scale(1.1);
 }
 
 .scoreCard {
@@ -98,4 +99,23 @@ h2 {
     color: gold;
     text-shadow: 1px 1px 2px black;
 
+}
+@media screen and (max-width:570px) {
+    h1{
+        font-size: 1rem;
+    }
+    .controls{
+        width: 350px;
+        padding:5px 10px ;
+    }
+    h2{
+        font-size: 1rem;
+    }
+    .choices{
+        font-size: 1rem;
+    }
+    #result{
+        font-size: 1.5rem;
+    }
+    
 }
