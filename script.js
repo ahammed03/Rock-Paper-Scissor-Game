@@ -19,6 +19,7 @@ function operation(event) {
     // console.log(event.target.id);
     let randomIndex = Math.floor(Math.random() * array.length);
     let result = "";
+    resultEle.textContent=result;
     setTimeout(() => {
         turn.textContent = "Your's Turn";
         controls.style.pointerEvents = 'auto';
@@ -38,7 +39,6 @@ function operation(event) {
         }
         // console.log(result);
         resultEle.textContent=result;
-
         if(result==="You Won"){
             userScore++;
             userScoreEle.textContent=userScore.toString();
